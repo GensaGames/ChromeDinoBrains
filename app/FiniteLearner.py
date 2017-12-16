@@ -60,14 +60,7 @@ class FiniteLearner(OnLearnerCallback):
             self.move_population()
             self.on_start()
 
-    def on_receive(self, scan_object):
-        barrier = scan_object.get_barrier()
-        if barrier is None:
-            barrier = Barrier(0, 0, 0)
-        # Input Neuron layer checking
-        params = [barrier.get_start(), barrier.get_height(), barrier.get_width(),
-                  scan_object.get_dino_height(), scan_object.get_speed()]
-
+    def on_receive(self, params):
         action = self.active.apply_action(params)
         self.on_action_callback.on_action(action)
 
@@ -172,8 +165,7 @@ class Genome:
     def __init__(self, neurons, output_neurons):
         self.__neurons = neurons
         self.__output_neurons = output_neurons
-        self.__generation = 0
-        self.__worked_time = 0
+        self.__generation, self.__worked_time = 0, 0
 
     @classmethod
     def empty(cls):
@@ -208,6 +200,9 @@ class Genome:
     def stop_work(self):
         self.__worked_time = (datetime.datetime.now()
                               - self.__worked_time).total_seconds()
+
+    def get_worked_time(self):
+        return self.__worked_time
 
     def set_reward(self, value):
         self.__worked_time = value
@@ -275,8 +270,6 @@ class Neuron:
             self.__weights.append(0)
 
         for val, weight in zip(values, self.__weights):
-            if val is None:
-                continue
             effect += val * weight
         return effect
 

@@ -1,6 +1,5 @@
 import sys
 import getopt
-import pickle
 import os
 import time
 
@@ -15,7 +14,7 @@ from app.Abstract import OnActionCallback
 from app.FiniteLearner import FiniteLearner
 
 from app.Settings import DINO_WEB_ELEMENT, DINO_WEBSITE_PATH, DINO_START_DELAY_PADDING, \
-    JUMP_THRESHOLD, SYSTEM_MAX_REC, TEMP_FOLDER
+    JUMP_THRESHOLD, SYSTEM_MAX_REC
 
 
 ###########################################################
@@ -46,7 +45,6 @@ class DinoGame(OnActionCallback):
                     self.learner.__class__.__name__)
         file_obj = open(self.source, 'wb')
         frozen = jsonpickle.encode(self.learner.on_get_source())
-        print(frozen)
         file_obj.write(frozen)
         file_obj.close()
 
@@ -69,7 +67,12 @@ class DinoGame(OnActionCallback):
                 self.__save_generation()
                 self.relaunch()
                 return
-            self.learner.on_receive(scan_object)
+
+            barrier = scan_object.get_barrier()
+            params = [barrier.get_start(), barrier.get_height(), barrier.get_width(),
+                      scan_object.get_dino_height(), scan_object.get_speed()]
+            self.learner.on_receive(params)
+            # --------------------------------------
             # print(str((datetime.datetime.now()
             #       - time_to_scan).total_seconds()))
 
@@ -81,15 +84,11 @@ class DinoGame(OnActionCallback):
 ###########################################################
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, 'h:s:', ['help', 'source'])
+        opts, args = getopt.getopt(argv, 's:', ['source='])
     except getopt.GetoptError:
         sys.exit(2)
     gen_source = None
     for opt, arg in opts:
-        if opt in ('-h', '--help'):
-            print("Run Script with own source -s (--source) and path to the new "
-                  "Resource, which will be saved, or using previous trained. ")
-            sys.exit()
         if opt in ('-s', '--source'):
             gen_source = arg
 
@@ -98,13 +97,9 @@ def main(argv):
     process.nice(psutil.HIGH_PRIORITY_CLASS)
 
     game = DinoGame()
-    if gen_source is None:
-        files = os.listdir(TEMP_FOLDER)
-        gen_source = None if not files else \
-            os.path.join(TEMP_FOLDER, files[0])
     game.load_generation(gen_source)
     game.relaunch()
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    main(sys.argv[1:])

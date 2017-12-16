@@ -4,9 +4,10 @@ import cv2
 import numpy as np
 import collections
 
-from app.Settings import DINO_WEB_CANVAS, SCANNER_SPEED_BUFFER, DINO_BARRIERS_STARTS_AT_X, CACTI_SEARCH_START_AT_Y, \
-    BIRDS_SEARCH_BODY_HEIGHT, RETRY_BUTTON_POINT, DINO_STATIC_X_LOCATION, IMAGE_SIZE, DINO_BARRIERS_ENDS_AT_X, \
-    BIRDS_BARRIER_ENDS_AT_Y, BIRDS_BARRIER_START_AT_Y, BIRDS_SEARCH_Y_STEP, CACTI_MAX_BRANCH_WIDTH
+from app.Settings import DINO_WEB_CANVAS
+from app.ScanSetting import IMAGE_SIZE, SCANNER_SPEED_BUFFER, DINO_STATIC_X_LOCATION, RETRY_BUTTON_POINT,  \
+    BIRDS_SEARCH_BODY_HEIGHT, BIRDS_SEARCH_Y_STEP, CACTI_SEARCH_START_AT_Y, CACTI_MAX_BRANCH_WIDTH, \
+    DINO_BARRIERS_X_POSITIONS, BIRDS_BARRIERS_Y_POSITIONS
 
 
 class Scanner:
@@ -34,6 +35,9 @@ class Scanner:
         speed = self.speed.get_average()
 
         barrier = bird if bird is not None else cacti
+        if barrier is None:
+            barrier = Barrier(0, 0, 0)
+
         return Parameters(barrier, get_dino_height(image),
                           speed, check_end_game(image))
 
@@ -62,6 +66,7 @@ class Speed:
         if self.speed_buffer:
             return sum(self.speed_buffer) \
                    / len(self.speed_buffer)
+        return 0
 
 
 class Parameters:
@@ -108,14 +113,12 @@ class Barrier:
                + str(self.height) + " Width: " + str(self.width)
 
 
-#######################################################
-#######################################################
-
+#####################################################################################
 # Main function for searching Cacti Barriers. This method doesn't search single barrier,
 # but all Cacti in Range of Branches. Which staying nearby first barrier.
 def find_cacti_barrier(image):
-    working_start_p = (DINO_BARRIERS_STARTS_AT_X, CACTI_SEARCH_START_AT_Y)
-    working_end_p = (DINO_BARRIERS_ENDS_AT_X, CACTI_SEARCH_START_AT_Y)
+    working_start_p = (DINO_BARRIERS_X_POSITIONS[0], CACTI_SEARCH_START_AT_Y)
+    working_end_p = (DINO_BARRIERS_X_POSITIONS[1], CACTI_SEARCH_START_AT_Y)
 
     barrier = find_horizontal_barriers(image, working_start_p, working_end_p)
     if barrier is None:
@@ -145,13 +148,13 @@ def find_cacti_barrier(image):
 # Main function for searching Birds.
 def find_bird_barrier(image, max_x_range):
     if max_x_range is None:
-        max_x_range = DINO_BARRIERS_ENDS_AT_X
-    max_point = (max_x_range, BIRDS_BARRIER_ENDS_AT_Y)
+        max_x_range = DINO_BARRIERS_X_POSITIONS[1]
+    max_point = (max_x_range, BIRDS_BARRIERS_Y_POSITIONS[1])
 
     barrier = None
-    for y in range(BIRDS_BARRIER_START_AT_Y, BIRDS_BARRIER_ENDS_AT_Y,
+    for y in range(BIRDS_BARRIERS_Y_POSITIONS[0], BIRDS_BARRIERS_Y_POSITIONS[1],
                    -1 * BIRDS_SEARCH_Y_STEP):
-        barrier = find_horizontal_barriers(image, (DINO_BARRIERS_STARTS_AT_X, y), max_point)
+        barrier = find_horizontal_barriers(image, (DINO_BARRIERS_X_POSITIONS[0], y), max_point)
         if barrier is not None:
             break
     if barrier is None:

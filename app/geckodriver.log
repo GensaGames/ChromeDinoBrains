@@ -1,51 +1,43 @@
-1513279631117	geckodriver	INFO	Listening on 127.0.0.1:61374
-1513279633195	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1513279633407	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///C:/Program%20Files/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
-1513279633777	Marionette	INFO	Enabled via --marionette
+1513427563382	geckodriver	INFO	Listening on 127.0.0.1:49690
+1513427565466	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1513427565660	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1554"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1554 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1589 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3109 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2188 < callProvider()@resource://gre/modules/AddonManager.jsm:269 < _startProvider()@resource://gre/modules/AddonManager.jsm:739 < startup()@resource://gre/modules/AddonManager.jsm:906 < startup()@resource://gre/modules/AddonManager.jsm:3090 < observe()@jar:file:///C:/Program%20Files/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
+1513427566049	Marionette	INFO	Enabled via --marionette
 Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
-[Parent 5036] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 4596] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
-[Child 1628] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-1513279635030	Marionette	INFO	Listening on port 61380
-1513279635248	Marionette	WARN	TLS certificate errors will be ignored for this session
-1513279635278	Marionette	DEBUG	Register listener.js for window 4294967297
-1513279635299	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
-1513279635314	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
-1513279635315	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
-1513279635315	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "4294967297"
-[Parent 5036] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-1513279635556	Marionette	DEBUG	Register listener.js for window 8589934593
-1513279635612	Marionette	DEBUG	Check readyState "uninitialized for "about:blank"
-1513279635638	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
-1513279635642	Marionette	DEBUG	Received DOM event "pageshow" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
-[Parent 5036] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4004] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4004] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1513427567446	Marionette	INFO	Listening on port 49696
+1513427567493	Marionette	WARN	TLS certificate errors will be ignored for this session
+1513427567549	Marionette	DEBUG	Register listener.js for window 4294967297
+1513427567621	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1513427567646	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1513427567646	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1513427567647	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "4294967297"
+1513427567914	Marionette	DEBUG	Register listener.js for window 8589934593
+1513427567960	Marionette	DEBUG	Check readyState "uninitialized for "about:blank"
+1513427567984	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
+1513427567989	Marionette	DEBUG	Received DOM event "pageshow" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
+UG	Check readyState "uninitialized for "about:blank"
+1513427529350	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
+1513427529355	Marionette	DEBUG	Received DOM event "pageshow" for "file:///C:/Work-Projects/Automation/ChromeDinoBrain/chrome_game/index.html"
+[Parent 7568] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 7568] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
-[Child 7256] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 7256] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Parent 5036] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11004] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11004] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
-[Child 2400] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 2400] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5856] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 5856] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
-[GPU 6288] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[GPU 9684] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
-e 346
-
-###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
-
-ppData\Local\openvr\openvrpaths.vrpath
-[GPU 9060] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-
-###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
-
-46
-
-###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
-
-nel_win.cc, line 346
+elemetry_modules_ping
+Unable to read VR Path Registry from C:\Users\GensaGames\AppData\Local\openvr\openvrpaths.vrpath
+[GPU 6952] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 

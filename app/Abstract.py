@@ -20,7 +20,7 @@ class OnLearnerCallback:
         pass
 
     @abstractmethod
-    def on_receive(self, fragment):
+    def on_receive(self, params):
         pass
 
 
