@@ -5,9 +5,9 @@ import numpy as np
 import collections
 
 from app.Settings import DINO_WEB_CANVAS
-from app.ScanSetting import IMAGE_SIZE, SCANNER_SPEED_BUFFER, DINO_STATIC_X_LOCATION, RETRY_BUTTON_POINT,  \
-    BIRDS_SEARCH_BODY_HEIGHT, BIRDS_SEARCH_Y_STEP, CACTI_SEARCH_START_AT_Y, CACTI_MAX_BRANCH_WIDTH, \
-    DINO_BARRIERS_X_POSITIONS, BIRDS_BARRIERS_Y_POSITIONS
+from app.ScanSetting import SCANNER_SPEED_BUFFER, DINO_LOCATION_X, RETRY_BUTTON_X_Y, \
+    PLAYABLE_AREA_Y, PLAYABLE_AREA_X, PLAYABLE_SEARCH_Y_RANGE, \
+    PLAYABLE_NEARBY_X_RANGE, RETRY_BUTTON_SIZE
 
 
 class Scanner:
@@ -24,21 +24,16 @@ class Scanner:
         image_base64 = np.fromstring(canvas_byte_array.decode('base64'), np.uint8)
         return cv2.imdecode(image_base64, cv2.IMREAD_GRAYSCALE)
 
-    def scan(self):
+    def scan_new(self):
         image = self.__make_capture()
-        cacti = find_cacti_barrier(image)
+        barrier = resolve_barriers(image)
 
-        bird_search_start = None if cacti is None else cacti.get_start()
-        bird = find_bird_barrier(image, bird_search_start)
-
-        self.speed.add_new_state(cacti)
+        self.speed.add_new_state(barrier)
         speed = self.speed.get_average()
 
-        barrier = bird if bird is not None else cacti
         if barrier is None:
             barrier = Barrier(0, 0, 0)
-
-        return Parameters(barrier, get_dino_height(image),
+        return Parameters(barrier, check_dino_height(image),
                           speed, check_end_game(image))
 
 
@@ -64,8 +59,8 @@ class Speed:
 
     def get_average(self):
         if self.speed_buffer:
-            return sum(self.speed_buffer) \
-                   / len(self.speed_buffer)
+            return round(sum(self.speed_buffer) \
+                   / len(self.speed_buffer), -1)
         return 0
 
 
@@ -109,95 +104,80 @@ class Barrier:
         return self.width
 
     def __str__(self):
-        return "Start at Y :" + str(self.start) + " Height: "\
+        return "Start at: " + str(self.start) + " Height: "\
                + str(self.height) + " Width: " + str(self.width)
 
 
-#####################################################################################
-# Main function for searching Cacti Barriers. This method doesn't search single barrier,
-# but all Cacti in Range of Branches. Which staying nearby first barrier.
-def find_cacti_barrier(image):
-    working_start_p = (DINO_BARRIERS_X_POSITIONS[0], CACTI_SEARCH_START_AT_Y)
-    working_end_p = (DINO_BARRIERS_X_POSITIONS[1], CACTI_SEARCH_START_AT_Y)
-
-    barrier = find_horizontal_barriers(image, working_start_p, working_end_p)
-    if barrier is None:
-        return None
-
-    # Searching nearby cacti, which might be connected to the first.
-    height = find_vertical_spread(image, barrier, -1)[1]
-    found_barriers = [barrier]
-    while True:
-        stem_width = find_horizontal_spread(image, barrier, +1)[0] - barrier[0]
-        max_nearby_range = barrier[0] + stem_width + (CACTI_MAX_BRANCH_WIDTH * 2)
-        barrier = find_horizontal_barriers(image, (barrier[0], working_start_p[1]),
-                          (max_nearby_range, working_start_p[1]))
-        if barrier is None:
-            break
-        found_barriers.append(barrier)
-        nearby_height = find_vertical_spread(image, barrier, -1)[1]
-        if nearby_height > height:
-            height = nearby_height
-
-    # Searching closes points from barriers. Most left and most right.
-    start = find_closest_side(image, found_barriers[0], [1, 0], lambda _x, _y: _x < _y)[0]
-    width = find_closest_side(image, found_barriers[-1], [3, 0], lambda _x, _y: _x > _y)[0] - start
-    return Barrier(start, height, width)
-
-
-# Main function for searching Birds.
-def find_bird_barrier(image, max_x_range):
-    if max_x_range is None:
-        max_x_range = DINO_BARRIERS_X_POSITIONS[1]
-    max_point = (max_x_range, BIRDS_BARRIERS_Y_POSITIONS[1])
-
+###########################################################################
+###########################################################################
+# Main function resolving Barriers throw methods below, checking for invert
+# color spread of color and moving to the closes same color point.
+def resolve_barriers(image):
     barrier = None
-    for y in range(BIRDS_BARRIERS_Y_POSITIONS[0], BIRDS_BARRIERS_Y_POSITIONS[1],
-                   -1 * BIRDS_SEARCH_Y_STEP):
-        barrier = find_horizontal_barriers(image, (DINO_BARRIERS_X_POSITIONS[0], y), max_point)
+
+    for y in range(PLAYABLE_AREA_Y[0], PLAYABLE_AREA_Y[1], PLAYABLE_SEARCH_Y_RANGE):
+        barrier = find_horizontal_barriers(image, (PLAYABLE_AREA_X[0], y),
+            (PLAYABLE_AREA_X[1], PLAYABLE_AREA_Y[1]))
         if barrier is not None:
             break
+
     if barrier is None:
         return None
 
-    barrier = find_closest_side(image, barrier, [1, 0], lambda _x, _y: _x < _y)
-    height = barrier[1] - BIRDS_SEARCH_BODY_HEIGHT
-    # Looking for the Bird width, without legs!
-    width = find_horizontal_spread(image, barrier, +1)[0] - barrier[0]
-    return Barrier(barrier[0], height, width)
+    main_start = move_closest(image, barrier, [1, 2, 3],
+            lambda _x, _y: _x[0] < _y[0])[0]
+    main_height = move_closest(image, barrier, [0, 1, 3],
+            lambda _x, _y: _x[1] < _y[1])[1]
 
+    # Searching nearby Barriers, which might be
+    # connected to the first in Range of Min Nearby
+    nearby = move_closest(image, barrier, [0, 2, 3],
+            lambda _x, _y: _x[0] > _y[0])
+    while True:
+        last = find_horizontal_barriers(image, (nearby[0], nearby[1]),
+                (nearby[0] + PLAYABLE_NEARBY_X_RANGE, nearby[1]))
+        if last is not None:
+            # Move again to the most nearby point!
+            # And checking their connected Barriers
+            nearby = move_closest(image, last, [0, 2, 3],
+                    lambda _x, _y: _x[0] > _y[0])
+        else:
+            break
 
-# Just check button location from Setting,
-# and vertical/horizontal spread is Bigger then Bird.
-def get_dino_height(image):
-    start_p = (DINO_STATIC_X_LOCATION, 0)
-    barrier = find_vertical_barriers(image, start_p,(DINO_STATIC_X_LOCATION,
-                                                     IMAGE_SIZE[1]))
-    if barrier is None:
-        return 0
-    return barrier[1]
+    main_width = nearby[0] - main_start
+    return Barrier(main_start, main_height, main_width)
 
 
 # Just check button location from Setting,
 # and vertical/horizontal spread is Bigger then Bird.
 def check_end_game(image):
-    button_point = RETRY_BUTTON_POINT
+    point = RETRY_BUTTON_X_Y
     background = int(image[0, 0])
 
-    if int(image[button_point[1],
-                 button_point[0]]) is background:
+    if int(image[point[1],
+                 point[0]]) is background:
         return False
 
-    return find_vertical_spread(image, button_point, +1)[1] - button_point[1] \
-           > BIRDS_SEARCH_BODY_HEIGHT and \
-           find_horizontal_spread(image, button_point, +1)[0] - button_point[0] \
-           > BIRDS_SEARCH_BODY_HEIGHT
+    return find_vertical_spread(image, point, +1)[1] - point[1] > RETRY_BUTTON_SIZE and \
+           find_horizontal_spread(image, point, +1)[0] - point[0] > RETRY_BUTTON_SIZE
+
+
+# Just check button location from Setting,
+# and vertical/horizontal spread is Bigger then Bird.
+def check_dino_height(image):
+    start_p = (DINO_LOCATION_X, 0)
+    barrier = find_vertical_barriers(image, start_p,
+                                     (DINO_LOCATION_X, PLAYABLE_AREA_Y[1]))
+
+    if barrier is None:
+        return 0
+    return barrier[1]
 
 
 # Find object start point, based on any another point.
 # Moving in direction, which is specified as list of
 # top(0), left(1), bottom(2), right(3)
-def find_closest_side(image, object_p, priority, predict):
+def move_closest(image, object_p, priority, predict):
     closest_p = object_p
     moving_p = object_p
     moving_d = -1
@@ -207,7 +187,7 @@ def find_closest_side(image, object_p, priority, predict):
         if moving_d in temp:
             temp.remove(moving_d)
         _d, _p = move_to_closest(image, moving_p, temp)
-        if predict(_p[0], closest_p[0]):
+        if predict(_p, closest_p):
             closest_p = _p
 
         if moving_p != _p:

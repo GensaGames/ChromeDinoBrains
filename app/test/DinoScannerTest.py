@@ -94,14 +94,14 @@ class ScannerTest(unittest.TestCase):
 
     def test_dino_height(self):
         dino_height1 = app.DinoScanner \
-            .get_dino_height(cv2.imread(IMG_FILE_1, 0))
+            .check_dino_height(cv2.imread(IMG_FILE_1, 0))
 
         self.log("Dino Height 1: " + str(dino_height1))
         self.assertIsNotNone(dino_height1)
         self.assertGreater(dino_height1, 0)
 
         dino_height2 = app.DinoScanner \
-            .get_dino_height(cv2.imread(IMG_FILE_2, 0))
+            .check_dino_height(cv2.imread(IMG_FILE_2, 0))
         self.log("Dino Height 2: " + str(dino_height2))
         self.assertNotEqual(dino_height1, dino_height2)
 

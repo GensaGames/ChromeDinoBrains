@@ -5,7 +5,6 @@ import random as rd
 import numpy as np
 import logging
 
-from app.DinoScanner import Barrier
 from app.Abstract import OnLearnerCallback
 from app.Settings import DINO_REWARD_PADDING, POPULATION_SIZE, HIDDEN_LAYER_NEURONS,\
     LEARN_RATE, LEARN_SIGMA, NEARBY_SIGMA

@@ -13,8 +13,8 @@ from app import Settings, DinoScanner
 from app.Abstract import OnActionCallback
 from app.FiniteLearner import FiniteLearner
 
-from app.Settings import DINO_WEB_ELEMENT, DINO_WEBSITE_PATH, DINO_START_DELAY_PADDING, \
-    JUMP_THRESHOLD, SYSTEM_MAX_REC
+from app.Settings import DINO_WEB_ELEMENT, DINO_WEBSITE_PATH, \
+    DINO_START_DELAY_PADDING, JUMP_THRESHOLD, SYSTEM_MAX_REC
 
 
 ###########################################################
@@ -59,7 +59,7 @@ class DinoGame(OnActionCallback):
 
     def __continue_game(self):
         while True:
-            scan_object = self.scanner.scan()
+            scan_object = self.scanner.scan_new()
             # --------------------------------------
             # Uncomment below statement to check FPS
             # time_to_scan = datetime.datetime.now()
@@ -69,6 +69,7 @@ class DinoGame(OnActionCallback):
                 return
 
             barrier = scan_object.get_barrier()
+            print(str(scan_object))
             params = [barrier.get_start(), barrier.get_height(), barrier.get_width(),
                       scan_object.get_dino_height(), scan_object.get_speed()]
             self.learner.on_receive(params)
