@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aca8b47-bd15-4068-9c6e-f4af165ce3e9" name="Default" comment="">
+    <list default="true" id="0aca8b47-bd15-4068-9c6e-f4af165ce3e9" name="Default" comment="Solved Test issues.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DinoScanner.py" afterPath="$PROJECT_DIR$/app/DinoScanner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/FiniteLearner.py" afterPath="$PROJECT_DIR$/app/FiniteLearner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MainGame.py" afterPath="$PROJECT_DIR$/app/MainGame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ScanSetting.py" afterPath="$PROJECT_DIR$/app/ScanSetting.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/test/DinoScannerTest.py" afterPath="$PROJECT_DIR$/app/test/DinoScannerTest.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +19,7 @@
       <file leaf-file-name="MainGame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/MainGame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="884">
               <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -31,21 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScanSetting.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/ScanSetting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DinoScanner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/DinoScanner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -64,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_population</find>
       <find>show_generation_info</find>
       <find>show_genome_info</find>
       <find>index</find>
@@ -94,6 +80,7 @@
       <find>apply_action</find>
       <find>move_closest</find>
       <find>IMAGE_SIZE</find>
+      <find>find_bird_barrier</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Work-Projects\Automation\ChromeDinoBrain</dir>
@@ -113,7 +100,6 @@
         <option value="$PROJECT_DIR$/app/Logger.py" />
         <option value="$PROJECT_DIR$/app/Scanner.py" />
         <option value="$PROJECT_DIR$/app/test/DinoBrainsTest.py" />
-        <option value="$PROJECT_DIR$/app/test/DinoScannerTest.py" />
         <option value="$PROJECT_DIR$/app/Helper.py" />
         <option value="$PROJECT_DIR$/app/DinoBrains.py" />
         <option value="$PROJECT_DIR$/app/FiniteDifferenceLearner.py" />
@@ -122,8 +108,9 @@
         <option value="$PROJECT_DIR$/app/Abstract.py" />
         <option value="$PROJECT_DIR$/app/Settings.py" />
         <option value="$PROJECT_DIR$/app/FiniteLearner.py" />
-        <option value="$PROJECT_DIR$/app/ScanSetting.py" />
         <option value="$PROJECT_DIR$/app/MainGame.py" />
+        <option value="$PROJECT_DIR$/app/ScanSetting.py" />
+        <option value="$PROJECT_DIR$/app/test/DinoScannerTest.py" />
         <option value="$PROJECT_DIR$/app/DinoScanner.py" />
       </list>
     </option>
@@ -169,9 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,6 +172,12 @@
             <path>
               <item name="ChromeDinoBrain" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChromeDinoBrain" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChromeDinoBrain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChromeDinoBrain" type="462c0819:PsiDirectoryNode" />
               <item name="images_hd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -198,7 +189,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MainGame">
+  <component name="RunManager" selected="Python tests.Unittests in DinoScannerTest.py">
     <configuration name="MainGame" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -522,8 +515,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.MainGame" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in DinoScannerTest.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in DinoScannerTest.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MainGame" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for DinoScannerTest.ScannerTest.test_bird_barrier" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for DinoBrainsTest.BrainsTest.test_generation_positive" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for DinoBrainsTest" />
@@ -547,34 +540,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_DinoScannerTest_ScannerTest_test_bird_barrier - 2017.11.26 at 13h 13m 20s.xml">
-      <configuration name="Unittests for DinoScannerTest.ScannerTest.test_bird_barrier" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_DinoScannerTest_ScannerTest_test_bird_barrier - 2017.11.26 at 13h 18m 19s.xml">
-      <configuration name="Unittests for DinoScannerTest.ScannerTest.test_bird_barrier" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.25 at 14h 20m 07s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.25 at 14h 21m 07s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.25 at 14h 21m 25s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.25 at 14h 22m 05s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.26 at 13h 06m 54s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.26 at 13h 10m 20s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.26 at 13h 12m 21s.xml">
-      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_DinoScannerTest_py - 2017.11.26 at 13h 18m 32s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 21m 56s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 22m 52s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 25m 43s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 26m 31s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 29m 51s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 36m 14s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 36m 41s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 37m 50s.xml">
+      <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_DinoScannerTest_py - 2017.12.16 at 18h 40m 40s.xml">
       <configuration name="Unittests in DinoScannerTest.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -593,18 +586,18 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292026" sideWeight="0.5029412" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43988684" sideWeight="0.4970588" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43988684" sideWeight="0.4970588" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21179625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21447721" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -613,35 +606,20 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292026" sideWeight="0.5029412" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39886847" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43988684" sideWeight="0.4970588" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21179625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Solved Test issues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Test issues." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,33 +642,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="183" column="27" lean-forward="true" selection-start-line="183" selection-start-column="27" selection-end-line="183" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/MainGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/MainGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -857,13 +808,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/images_qhd/test_dino_run3.png" />
-    <entry file="file://$PROJECT_DIR$/app/test/DinoScannerTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python27/Lib/abc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -904,7 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-273">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,21 +869,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/ScanSetting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images_hd/test_dino_run3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images_hd/test_dino_run1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images_hd/test_dino_run2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test/DinoScannerTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/MainGame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="884">
           <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -951,8 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/DinoScanner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

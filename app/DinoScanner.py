@@ -22,6 +22,7 @@ class Scanner:
             .execute_script("return arguments[0].toDataURL('image/png').substring(21);",
                             self.canvas_element)
         image_base64 = np.fromstring(canvas_byte_array.decode('base64'), np.uint8)
+        # noinspection PyUnresolvedReferences
         return cv2.imdecode(image_base64, cv2.IMREAD_GRAYSCALE)
 
     def scan_new(self):
@@ -131,7 +132,7 @@ def resolve_barriers(image):
 
     # Searching nearby Barriers, which might be
     # connected to the first in Range of Min Nearby
-    nearby = move_closest(image, barrier, [0, 2, 3],
+    nearby = move_closest(image, barrier, [3, 0, 2],
             lambda _x, _y: _x[0] > _y[0])
     while True:
         last = find_horizontal_barriers(image, (nearby[0], nearby[1]),
@@ -139,7 +140,8 @@ def resolve_barriers(image):
         if last is not None:
             # Move again to the most nearby point!
             # And checking their connected Barriers
-            nearby = move_closest(image, last, [0, 2, 3],
+            print("Found next from: " + str(nearby[0]) + " with start: " + str(last[0]))
+            nearby = move_closest(image, last, [3, 0, 2],
                     lambda _x, _y: _x[0] > _y[0])
         else:
             break

@@ -67,14 +67,14 @@ class ScannerTest(unittest.TestCase):
 
     def test_cacti_barrier(self):
         barrier = app.DinoScanner \
-            .find_cacti_barrier(cv2.imread(IMG_FILE_1, 0))
+            .resolve_barriers(cv2.imread(IMG_FILE_1, 0))
 
         self.log("Cacti barriers on image is: " + str(barrier))
         self.assertIsNotNone(barrier)
 
     def test_bird_barrier(self):
         barrier = app.DinoScanner \
-            .find_bird_barrier(cv2.imread(IMG_FILE_2, 0), None)
+            .resolve_barriers(cv2.imread(IMG_FILE_2, 0))
 
         self.log("Bird 1 barriers on image is: " + str(barrier))
         self.assertIsNotNone(barrier)
