@@ -1,4 +1,1 @@
-* linguist-vendored
-*.js linguist-vendored=false
-*.html linguist-vendored=false
-*.css linguist-vendored=false
+chrome_game/* linguist-vendored
