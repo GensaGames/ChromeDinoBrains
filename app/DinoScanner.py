@@ -117,10 +117,11 @@ def resolve_barriers(image):
     barrier = None
 
     for y in range(PLAYABLE_AREA_Y[0], PLAYABLE_AREA_Y[1], PLAYABLE_SEARCH_Y_RANGE):
-        barrier = find_horizontal_barriers(image, (PLAYABLE_AREA_X[0], y),
+        last = find_horizontal_barriers(image, (PLAYABLE_AREA_X[0], y),
             (PLAYABLE_AREA_X[1], PLAYABLE_AREA_Y[1]))
-        if barrier is not None:
-            break
+        if last is not None:
+            if barrier is None or last[0] < barrier[0]:
+                barrier = last
 
     if barrier is None:
         return None
@@ -140,7 +141,6 @@ def resolve_barriers(image):
         if last is not None:
             # Move again to the most nearby point!
             # And checking their connected Barriers
-            print("Found next from: " + str(nearby[0]) + " with start: " + str(last[0]))
             nearby = move_closest(image, last, [3, 0, 2],
                     lambda _x, _y: _x[0] > _y[0])
         else:
@@ -169,8 +169,7 @@ def check_end_game(image):
 def check_dino_height(image):
     start_p = (DINO_LOCATION_X, 0)
     barrier = find_vertical_barriers(image, start_p,
-                                     (DINO_LOCATION_X, PLAYABLE_AREA_Y[1]))
-
+        (DINO_LOCATION_X, PLAYABLE_AREA_Y[1]))
     if barrier is None:
         return 0
     return barrier[1]

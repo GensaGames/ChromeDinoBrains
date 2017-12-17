@@ -1,6 +1,6 @@
 
 ###################################################
-# TODO (Comments) Check with from thsis already solved.
+# TODO (Comments) Check this list already solved.
 # Scanner Settings! List of items with possible improvements, which
 # were skipped for now, to save performance.
 # - CACTI. Skipper several pixels for cacti top height.

@@ -30,7 +30,8 @@ class DinoGame(OnActionCallback):
         self.source, self.scanner = None, None
 
     def load_generation(self, source):
-        if source is None:
+        if source is None or \
+                not os.path.isfile(source):
             return
         file_obj = open(source, 'rb')
         source_object = jsonpickle.decode(file_obj.read())
@@ -42,7 +43,7 @@ class DinoGame(OnActionCallback):
     def __save_generation(self):
         if self.source is None:
             self.source = os.path.join(Settings.TEMP_FOLDER,
-                    self.learner.__class__.__name__)
+                    "." + self.learner.__class__.__name__)
         file_obj = open(self.source, 'wb')
         frozen = jsonpickle.encode(self.learner.on_get_source())
         file_obj.write(frozen)
@@ -69,7 +70,6 @@ class DinoGame(OnActionCallback):
                 return
 
             barrier = scan_object.get_barrier()
-            print(str(scan_object))
             params = [barrier.get_start(), barrier.get_height(), barrier.get_width(),
                       scan_object.get_dino_height(), scan_object.get_speed()]
             self.learner.on_receive(params)
