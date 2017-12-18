@@ -7,6 +7,6 @@ So far, we using custom Game Scanner to resolve data for the Agent. Instead of t
 
 ### Dependencies 
 
-- Selenium for running Web Browser and fetching Image. We using Firefox, which much more faster performing Key Events too. - Jsonpickle for saving/retrieving information in readable format. - Open CV to loading Image in most fast way and gray format. -Psutil for prioritizing current process. 
+  - Selenium for running Web Browser and fetching Image. We using Firefox, which much more faster performing Key Events too. - Jsonpickle for saving/retrieving information in readable format. - Open CV to loading Image in most fast way and gray format. -Psutil for prioritizing current process. 
 
 We also using local setting ro run Web Browser with custom HD Screen Resolution. See Game Scanner file for more information. You can configure work for any resolution, but in our case, we want to save performance as much, as it possible. 
