@@ -1,4 +1,6 @@
 import os
+
+# noinspection PyCompatibility
 import pathlib
 
 ########################################################
@@ -25,11 +27,10 @@ SYSTEM_MAX_REC = 100000
 ########################################################
 # Brains Hyper Parameters and Schemes
 DINO_REWARD_PADDING = 5.5
-POPULATION_SIZE = 3
+DINO_START_DELAY_PADDING = 1
 HIDDEN_LAYER_NEURONS = 8
 LEARN_RATE = 0.5
 LEARN_SIGMA = 1
 NEARBY_SIGMA = 1
 JUMP_THRESHOLD = 0.8
-DINO_START_DELAY_PADDING = 1
 

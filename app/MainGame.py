@@ -3,7 +3,9 @@ import getopt
 import os
 import time
 
+# noinspection PyUnresolvedReferences
 import datetime
+
 import psutil
 import jsonpickle
 from selenium import webdriver
@@ -23,16 +25,17 @@ class DinoGame(OnActionCallback):
     def __init__(self):
         self.driver = webdriver.Firefox()
         self.driver.get(DINO_WEBSITE_PATH)
+
         self.element = self.driver \
             .find_element_by_class_name(DINO_WEB_ELEMENT)
+        self.source, self.scanner, self.learner = None, None, None
 
-        self.learner = FiniteLearner(self)
-        self.source, self.scanner = None, None
-
-    def load_generation(self, source):
+    def load_generation(self, source, population):
+        self.learner = FiniteLearner(self, population)
         if source is None or \
                 not os.path.isfile(source):
             return
+
         file_obj = open(source, 'rb')
         source_object = jsonpickle.decode(file_obj.read())
         file_obj.close()
@@ -85,20 +88,23 @@ class DinoGame(OnActionCallback):
 ###########################################################
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, 's:', ['source='])
+        opts, args = getopt.getopt(argv, 's:p:', ['source=', 'population='])
     except getopt.GetoptError:
         sys.exit(2)
-    gen_source = None
+
+    source, population = None, None
     for opt, arg in opts:
         if opt in ('-s', '--source'):
-            gen_source = arg
+            source = arg
+        if opt in ('-p', '--population'):
+            population = int(arg)
 
     sys.setrecursionlimit(SYSTEM_MAX_REC)
     process = psutil.Process(os.getpid())
     process.nice(psutil.HIGH_PRIORITY_CLASS)
 
     game = DinoGame()
-    game.load_generation(gen_source)
+    game.load_generation(source, population)
     game.relaunch()
 
 

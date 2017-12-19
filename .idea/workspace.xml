@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aca8b47-bd15-4068-9c6e-f4af165ce3e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/.FiniteLearner" />
+    <list default="true" id="0aca8b47-bd15-4068-9c6e-f4af165ce3e9" name="Default" comment="Some minor changes and updated trained results.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/FiniteLearner.py" afterPath="$PROJECT_DIR$/app/FiniteLearner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MainGame.py" afterPath="$PROJECT_DIR$/app/MainGame.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Settings.py" afterPath="$PROJECT_DIR$/app/Settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/.FiniteLearner" afterPath="$PROJECT_DIR$/temp/.FiniteLearner" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,25 +18,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DinoScanner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/DinoScanner.py">
+      <file leaf-file-name="MainGame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/MainGame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainGame.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/MainGame.py">
+      <file leaf-file-name="Settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FiniteLearner.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="932">
+              <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,36 +63,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show_generation_info</find>
-      <find>show_genome_info</find>
-      <find>index</find>
-      <find>233263122443</find>
-      <find>prin</find>
-      <find>size</find>
-      <find>round</find>
-      <find>find_horizontal_spread</find>
-      <find>Logger</find>
-      <find>ChromeDinoBrain</find>
-      <find>IMG_FILE_2</find>
-      <find>IMG_FILE_3</find>
-      <find>IMG_FILE_4</find>
-      <find>-0.80598694307858376,</find>
-      <find>get_ideal_genome</find>
-      <find>app.Settings.</find>
-      <find>print</find>
-      <find>DinoBr</find>
-      <find>on_action_callback</find>
-      <find>generation</find>
-      <find>rewards</find>
-      <find>.rewa</find>
-      <find>empty</find>
-      <find>with_random</find>
-      <find>INPUT_LAYER_NEURONS</find>
-      <find>Neuron</find>
-      <find>apply_action</find>
-      <find>move_closest</find>
       <find>IMAGE_SIZE</find>
       <find>find_bird_barrier</find>
+      <find>self.population</find>
+      <find>Genome End with Rewards:</find>
+      <find>Genome End with Rewards: 11</find>
+      <find>Genome End with Rewards: 1</find>
+      <find>Genome End with Rewards: 12</find>
+      <find>Genome End with Rewards: 13</find>
+      <find>Genome End with Rewards: 14</find>
+      <find>Genome End with Rewards: 15</find>
+      <find>Genome End with Rewards: 16</find>
+      <find>Genome End with Rewards: 17</find>
+      <find>Genome End with Rewards: 18</find>
+      <find>Genome End with Rewards: 19</find>
+      <find>Genome End with Rewards: 20</find>
+      <find>Genome End with Rewards: 21</find>
+      <find>Genome End with Rewards: 22</find>
+      <find>Genome End with Rewards: 23</find>
+      <find>Genome End with Rewards: 24</find>
+      <find>Genome End with Rewards: 25</find>
+      <find>Genome End with Rewards: 26</find>
+      <find>Genome End with Rewards: 27</find>
+      <find>Genome End with Rewards: 28</find>
+      <find>Genome End with Rewards: 2</find>
+      <find>Genome End with Rewards: 29</find>
+      <find>Genome End with Rewards: 30</find>
+      <find>Genome End with Rewards: 31</find>
+      <find>Genome End with Rewards: 32</find>
+      <find>Genome End with Rewards: 70</find>
+      <find>POPULATION_SIZE</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Work-Projects\Automation\ChromeDinoBrain</dir>
@@ -106,12 +118,13 @@
         <option value="$PROJECT_DIR$/app/DinoScanner1.py" />
         <option value="$PROJECT_DIR$/app/ImageScanner.py" />
         <option value="$PROJECT_DIR$/app/Abstract.py" />
-        <option value="$PROJECT_DIR$/app/Settings.py" />
-        <option value="$PROJECT_DIR$/app/FiniteLearner.py" />
         <option value="$PROJECT_DIR$/app/test/DinoScannerTest.py" />
         <option value="$PROJECT_DIR$/app/DinoScanner.py" />
         <option value="$PROJECT_DIR$/app/ScanSetting.py" />
+        <option value="$PROJECT_DIR$/.gitattributes" />
+        <option value="$PROJECT_DIR$/app/FiniteLearner.py" />
         <option value="$PROJECT_DIR$/app/MainGame.py" />
+        <option value="$PROJECT_DIR$/app/Settings.py" />
       </list>
     </option>
   </component>
@@ -156,7 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,8 +201,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -232,7 +245,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="chrome-dino-brain" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/MainGame.py" />
-      <option name="PARAMETERS" value="-s C:\Work-Projects\Automation\ChromeDinoBrain\temp\.FiniteLearner" />
+      <option name="PARAMETERS" value="-s C:\Work-Projects\Automation\ChromeDinoBrain\temp\.FiniteLearner -p 10" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
@@ -551,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1513530337948</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Previous trained result.">
+      <created>1513530440006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513530440006</updated>
+    </task>
+    <task id="LOCAL-00004" summary="GitAttrs.">
+      <created>1513530584173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513530584173</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -597,10 +624,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -608,10 +636,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43988684" sideWeight="0.4970588" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21447721" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22252011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -660,7 +688,10 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Solved Test issues." />
     <MESSAGE value="Updated Scan behavior, added previous trained result." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Scan behavior, added previous trained result." />
+    <MESSAGE value="Previous trained result." />
+    <MESSAGE value="GitAttrs." />
+    <MESSAGE value="Some minor changes and updated trained results." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some minor changes and updated trained results." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -671,28 +702,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="37" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.get_population().index(top_genome)" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/MainGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/MainGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -878,21 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images_hd/test_dino_run3.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -912,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,17 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DinoScanner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,17 +936,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python27/Lib/site-packages/psutil/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="780" column="13" lean-forward="false" selection-start-line="780" selection-start-column="13" selection-end-line="780" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DinoScanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="932">
+          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/MainGame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="544">
+          <caret line="32" column="50" lean-forward="false" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

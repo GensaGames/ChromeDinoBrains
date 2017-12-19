@@ -6,20 +6,20 @@ import numpy as np
 import logging
 
 from app.Abstract import OnLearnerCallback
-from app.Settings import DINO_REWARD_PADDING, POPULATION_SIZE, HIDDEN_LAYER_NEURONS,\
+from app.Settings import DINO_REWARD_PADDING, HIDDEN_LAYER_NEURONS,\
     LEARN_RATE, LEARN_SIGMA, NEARBY_SIGMA
 
 
 ################################################
 class FiniteLearner(OnLearnerCallback):
 
-    def __init__(self, on_action_callback):
+    def __init__(self, on_action_callback, population):
         super(FiniteLearner, self).__init__(on_action_callback)
         logging.basicConfig(format='%(levelname)s %(asctime)s %(message)s',
                             datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
 
         self.ideal_genome = Genome.empty()
-        self.active, self.population = None, None
+        self.active, self.population = None, [None] * population
         self.start_noise()
 
     def on_load_source(self, source):
@@ -64,8 +64,9 @@ class FiniteLearner(OnLearnerCallback):
         self.on_action_callback.on_action(action)
 
     def start_noise(self):
+        length = len(self.population)
         self.population = []
-        for item in range(POPULATION_SIZE):
+        for item in range(length):
             self.population.append(Genome.nearby(self.ideal_genome))
 
     def move_population(self):
@@ -142,16 +143,16 @@ class FiniteLearner(OnLearnerCallback):
     def __print_generation(self):
         logging.info("Generation Done Work!")
 
-        top_rewards_genome = None
+        top_genome = None
         for genome in self.get_population():
-            if top_rewards_genome is None:
-                top_rewards_genome = genome
+            if top_genome is None:
+                top_genome = genome
                 continue
-            if genome.get_reward() > top_rewards_genome.get_reward():
-                top_rewards_genome = genome
+            if genome.get_reward() > top_genome.get_reward():
+                top_genome = genome
 
-        logging.info("Most Rewards for Genome: " + str(self.get_population().index(top_rewards_genome))
-              + " Reward: " + str(top_rewards_genome.get_reward()) + "\n" + str(top_rewards_genome))
+        logging.info("Most Rewards for Genome: " + str(self.get_population().index(top_genome))
+              + " Reward: " + str(top_genome.get_reward()) + "\n" + str(top_genome))
 
     def get_population(self):
         return self.population
