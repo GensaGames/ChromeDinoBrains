@@ -11,12 +11,12 @@ import jsonpickle
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-from app import Settings, DinoScanner
+from app import Settings, GameScanner
 from app.Abstract import OnActionCallback
 from app.FiniteLearner import FiniteLearner
 
 from app.Settings import DINO_WEB_ELEMENT, DINO_WEBSITE_PATH, \
-    DINO_START_DELAY_PADDING, JUMP_THRESHOLD, SYSTEM_MAX_REC
+    START_DELAY_PADDING, JUMP_THRESHOLD, SYSTEM_MAX_REC, WORKING_JUMP_DELAY
 
 
 ###########################################################
@@ -53,20 +53,21 @@ class DinoGame(OnActionCallback):
         file_obj.close()
 
     def relaunch(self):
-        time.sleep(DINO_START_DELAY_PADDING)
-        self.scanner = DinoScanner.Scanner(self.driver)
+        time.sleep(START_DELAY_PADDING)
+        self.scanner = GameScanner.Scanner(self.driver)
         self.element.send_keys(Keys.ARROW_UP)
 
-        time.sleep(DINO_START_DELAY_PADDING)
+        time.sleep(START_DELAY_PADDING)
         self.learner.on_start()
         self.__continue_game()
 
     def __continue_game(self):
         while True:
-            scan_object = self.scanner.scan_new()
             # --------------------------------------
             # Uncomment below statement to check FPS
             # time_to_scan = datetime.datetime.now()
+
+            scan_object = self.scanner.scan_new()
             if scan_object.is_end():
                 self.__save_generation()
                 self.relaunch()
@@ -76,6 +77,7 @@ class DinoGame(OnActionCallback):
             params = [barrier.get_start(), barrier.get_height(), barrier.get_width(),
                       scan_object.get_dino_height(), scan_object.get_speed()]
             self.learner.on_receive(params)
+
             # --------------------------------------
             # print(str((datetime.datetime.now()
             #       - time_to_scan).total_seconds()))
@@ -83,6 +85,9 @@ class DinoGame(OnActionCallback):
     def on_action(self, value):
         if value > JUMP_THRESHOLD:
             self.element.send_keys(Keys.ARROW_UP)
+            # Since we performing next Scan action immediately, we should
+            # add small Delay for action, and avoid wrong results.
+            time.sleep(WORKING_JUMP_DELAY)
 
 
 ###########################################################

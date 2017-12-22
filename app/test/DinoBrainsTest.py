@@ -1,12 +1,10 @@
 from __future__ import print_function
-import cv2  # .cv2 as cv2
 import time
 import unittest
 import numpy as np
 
-import os
 import app.Settings
-import app.DinoScanner
+import app.GameScanner
 import app.FiniteLearner
 
 
@@ -94,7 +92,7 @@ class BrainsTest(unittest.TestCase):
 
     def test_genome_apply_empty(self):
         genome = app.FiniteLearner.Genome.empty()
-        action = genome.apply_action(app.DinoScanner.Barrier(80, 80, 80))
+        action = genome.apply_action(app.GameScanner.Barrier(80, 80, 80))
         self.log("Genome apply empty action: " + str(action))
         self.assertGreater(action, 0)
 

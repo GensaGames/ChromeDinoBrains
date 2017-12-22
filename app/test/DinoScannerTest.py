@@ -5,7 +5,7 @@ import unittest
 
 import os
 import app.Settings
-import app.DinoScanner
+import app.GameScanner
 
 IMG_FILE_1 = os.path.join(app.Settings.IMAGES_HD, "test_dino_run1.png")
 IMG_FILE_2 = os.path.join(app.Settings.IMAGES_HD, "test_dino_run2.png")
@@ -30,14 +30,14 @@ class ScannerTest(unittest.TestCase):
         print(self.id() + ": " + msg)
 
     def test_horizontal_occurrence(self):
-        barrier_point = app.DinoScanner\
+        barrier_point = app.GameScanner\
             .find_horizontal_barriers(cv2.imread(IMG_FILE_1, 0),
                                       CACTI_HOR_START, CACTI_HOR_END)
         self.log("Barrier Point is: " + str(barrier_point))
         self.assertIsNotNone(barrier_point)
 
     def test_vertical_occurrence(self):
-        barrier_point = app.DinoScanner \
+        barrier_point = app.GameScanner \
             .find_vertical_barriers(cv2.imread(IMG_FILE_1, 0),
                                     CACTI_VER_START, CACTI_VER_END)
         self.log("Barrier Point is: " + str(barrier_point))
@@ -45,10 +45,10 @@ class ScannerTest(unittest.TestCase):
 
     def test_horizontal_spread(self):
         image = cv2.imread(IMG_FILE_1, 0)
-        barrier_point = app.DinoScanner \
+        barrier_point = app.GameScanner \
             .find_horizontal_barriers(image, CACTI_HOR_START, CACTI_HOR_END)
 
-        color_length = app.DinoScanner \
+        color_length = app.GameScanner \
             .find_horizontal_spread(image, barrier_point, +1)
         self.log("Color length from: " + str(barrier_point)
                  + " to: " + str(color_length))
@@ -56,51 +56,51 @@ class ScannerTest(unittest.TestCase):
 
     def test_vertical_spread(self):
         image = cv2.imread(IMG_FILE_1, 0)
-        barrier_point = app.DinoScanner \
+        barrier_point = app.GameScanner \
             .find_horizontal_barriers(image, CACTI_HOR_START, CACTI_HOR_END)
 
-        color_length = app.DinoScanner \
+        color_length = app.GameScanner \
             .find_vertical_spread(image, barrier_point, -1)
         self.log("Color length from: " + str(barrier_point)
                  + " to: " + str(color_length))
         self.assertIsNotNone(color_length)
 
     def test_cacti_barrier(self):
-        barrier = app.DinoScanner \
+        barrier = app.GameScanner \
             .resolve_barriers(cv2.imread(IMG_FILE_1, 0))
 
         self.log("Cacti barriers on image is: " + str(barrier))
         self.assertIsNotNone(barrier)
 
     def test_bird_barrier(self):
-        barrier = app.DinoScanner \
+        barrier = app.GameScanner \
             .resolve_barriers(cv2.imread(IMG_FILE_2, 0))
 
         self.log("Bird 1 barriers on image is: " + str(barrier))
         self.assertIsNotNone(barrier)
 
     def test_game_end(self):
-        game_end = app.DinoScanner \
+        game_end = app.GameScanner \
             .check_end_game(cv2.imread(IMG_FILE_2, 0))
 
         self.log("Game End 1: " + str(game_end))
         self.assertFalse(game_end)
 
-        game_end = app.DinoScanner \
+        game_end = app.GameScanner \
             .check_end_game(cv2.imread(IMG_FILE_4, 0))
 
         self.log("Game End 2: " + str(game_end))
         self.assertTrue(game_end)
 
     def test_dino_height(self):
-        dino_height1 = app.DinoScanner \
+        dino_height1 = app.GameScanner \
             .check_dino_height(cv2.imread(IMG_FILE_1, 0))
 
         self.log("Dino Height 1: " + str(dino_height1))
         self.assertIsNotNone(dino_height1)
         self.assertGreater(dino_height1, 0)
 
-        dino_height2 = app.DinoScanner \
+        dino_height2 = app.GameScanner \
             .check_dino_height(cv2.imread(IMG_FILE_2, 0))
         self.log("Dino Height 2: " + str(dino_height2))
         self.assertNotEqual(dino_height1, dino_height2)
