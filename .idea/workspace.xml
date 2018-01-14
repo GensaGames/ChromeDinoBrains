@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0aca8b47-bd15-4068-9c6e-f4af165ce3e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ScanSetting.py" afterPath="$PROJECT_DIR$/app/ScanSetting.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/.FiniteLearner" afterPath="$PROJECT_DIR$/temp/.FiniteLearner" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,48 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainGame.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainGame.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/MainGame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
+            <state relative-caret-position="17">
               <caret line="77" column="77" lean-forward="false" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FiniteLearner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/FiniteLearner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameScanner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/GameScanner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1955">
-              <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -957,7 +921,7 @@
         <state relative-caret-position="204">
           <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -971,16 +935,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/old/ScannerTest.py" />
-    <entry file="file://$PROJECT_DIR$/app/MainGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="77" column="77" lean-forward="false" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/ScanSetting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -990,10 +944,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="18" />
+        <state relative-caret-position="282">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/MainGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="77" column="77" lean-forward="false" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
